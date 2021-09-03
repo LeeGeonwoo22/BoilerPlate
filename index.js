@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 const config = require('./config/key')
 
 const { auth } = require('./middleware/auth')
-const {User} = require('./models/Users')
+const { User } = require('./ models/Users')
 
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI, {
