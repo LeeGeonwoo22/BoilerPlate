@@ -72,10 +72,10 @@ userSchema.pre('save', function(next){
     }
 })
 
-userSchema.methods.comparePassword = function(plainPassword, cd){
+userSchema.methods.comparePassword = function(plainPassword, cb){
     // 비밀번호 비교할때  암호화된 비밀번호 
     bcrypt.compare(plainPassword, this.password, function(err, isMatch) {
-        if(err) return cb(err), 
+        if(err) return cb(err);
         cb(null, isMatch)
     })
 }
@@ -87,7 +87,7 @@ userSchema.methods.generateToken = function (cb) {
     // user._id + 'secretToken' = token
     user.token = token 
     user.save(function(err, user){
-        if(err) return cb(err)
+        if(err) return cb(err);
         cb(null, user)
     })
 }
