@@ -15,16 +15,16 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/" component={LandingPage}>
             <LandingPage />
           </Route>
-          <Route path = "/Login">
+          <Route path = "/Login" component={LoginPage}>
             <LoginPage />
           </Route>
-          <Route path ="/Register">
+          <Route path ="/Register" component={RegisterPage}>
             <RegisterPage />
           </Route>
-          <Route path ="/Nav">
+          <Route path ="/Nav" component={Nav}>
             <Nav />
           </Route>
         </Switch>
