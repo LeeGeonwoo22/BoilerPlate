@@ -34,6 +34,7 @@ const userSchema = mongoose.Schema({
     }
 })
 
+console.log('유저스키마' , userSchema)
 // 사용자 정보를 mongoDB에 save하기 전 
 userSchema.pre('save', function( next ){
     var user = this;
@@ -67,10 +68,11 @@ userSchema.methods.comparePassword = function(plainPassword, cb) {
 
 userSchema.methods.generateToken = function(cb) {
 
+    // es5 문법을 쓰기위해 유저에 this를 넣어줌
     var user = this;
-
     // jsonwebtoken 이용해서 token 생성
     // user._id (DB에 존재하는 ID) + "secretToken" = token
+
     var token = jwt.sign(user._id.toHexString(), "secretToken") 
 
     user.token = token
