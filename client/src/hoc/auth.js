@@ -3,7 +3,6 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import {auth} from '../_action/user_action'
 
-
 export default function (SpecificComponent, option, adminRoute = null ) {
 
     // null => 아무나 출입이 가능한 상태
