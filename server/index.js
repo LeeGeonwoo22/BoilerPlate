@@ -63,6 +63,7 @@ app.post('/api/users/login', (req, res) => {
           return res.status(400).send(err);
         }
         // 토큰을 저장한다. 어디에 쿠키, 로컬스토리지
+        // 쿠키("쿠키이름",유저토큰) 쿠키에 유저토큰이 저장이됨. 
         res.cookie("x_auth",user.token) 
             .status(200)
             .json({
