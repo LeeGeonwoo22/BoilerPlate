@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_action/user_action';
 import { withRouter} from 'react-router-dom'
+import styled from 'style-component';
 
 function RegisterPage(props) {
     const dispatch = useDispatch();
@@ -43,19 +44,23 @@ function RegisterPage(props) {
                 alert('failed to sign up')
             }
         })
-        
-        
     }
+
+    const RegisterPage = styled.div`
+        display : 'flex';
+        justify-content: 'center';
+        align-items: 'center';
+        width : '100%'; 
+        height : '100vh';
+            form {
+            display: 'flex';
+            flex-direction: 'column';
+        }
+    `;
+
     return (
-        <div style ={{
-            display : 'flex', justifyContent: 'center', alignItems : 'center',
-            width : '100%', height : '100vh'
-        }}>
-
-
-            <form style={{display : 'flex', flexDirection : 'column'}}
-                onSubmit={onSubmitHandler}
-            >
+        <RegisterPage>
+            <form onSubmit={onSubmitHandler}>
                 <label>Email</label>
                 <input type="email" value={Email} onChange={onEmailHandler} />
 
@@ -73,7 +78,7 @@ function RegisterPage(props) {
                     회원가입
                 </button>
             </form>
-        </div>
+        </RegisterPage>
     )
 }
 

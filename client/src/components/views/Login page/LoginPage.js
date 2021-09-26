@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_action/user_action';
 import { withRouter} from 'react-router-dom'
+import styled from 'style-component'
 
 function LoginPage(props) {
     const dispatch = useDispatch();
@@ -35,16 +36,21 @@ function LoginPage(props) {
         
         
     }
+
+const LoginPage = styled.div`
+    display : 'flex';
+    justify-content: 'center';
+    align-items : 'center';
+    width : '100%' ;
+    height : '100vh';
+    .form {
+        display : 'flex';
+        flex-direction : 'column';
+    }
+`;
     return (
-        <div style ={{
-            display : 'flex', justifyContent: 'center', alignItems : 'center',
-            width : '100%', height : '100vh'
-        }}>
-
-
-            <form style={{display : 'flex', flexDirection : 'column'}}
-                onSubmit={onSubmitHandler}
-            >
+        <LoginPage>
+            <form onSubmit={onSubmitHandler}>
                 <label>E-mail</label>
                 <input type="email" value={Email} onChange={onEmailHandler} />
                 <label>Password</label>
@@ -54,7 +60,7 @@ function LoginPage(props) {
                     login
                 </button>
             </form>
-        </div>
+        </LoginPage>        
     )
 }
 
