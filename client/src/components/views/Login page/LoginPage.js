@@ -43,7 +43,7 @@ const LoginPage = styled.div`
     align-items : 'center';
     width : '100%' ;
     height : '100vh';
-    .form {
+    form {
         display : 'flex';
         flex-direction : 'column';
     }

@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import axios from 'axios';
 import { withRouter} from 'react-router-dom'
-import styled from 'style-component'
+import styled from "styled-components";
 
 function LandingPage() {
     useEffect(() => {
