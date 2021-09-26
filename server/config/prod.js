@@ -1,3 +1,3 @@
 module.exports={
-    mongoURI: process.env.MONGO_URI
+    // mongoURI: `mongodb+srv://corepen:rlazheld@boilerplate.cvbef.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
 }

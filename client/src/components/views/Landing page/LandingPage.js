@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import axios from 'axios';
 import { withRouter} from 'react-router-dom'
+import styled from 'style-component'
 
 function LandingPage() {
     useEffect(() => {
@@ -19,16 +20,25 @@ function LandingPage() {
             }
         })
     }
+    
+    const Landing = styled.div`
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        width : 100%;
+        height : 100vh;
+    `;
+
     return (
-        <div style ={{
-            display : 'flex', justifyContent: 'center', alignItems : 'center',
-            width : '100%', height : '100vh'
-        }}>
+    
+        <Landing>
             <h2>시작 페이지</h2>
             <button onClick={onClickHandler}>
                 로그아웃
             </button>
-        </div>
+        </Landing>
+            
+        
     )
 }
 

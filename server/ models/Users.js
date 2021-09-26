@@ -34,7 +34,7 @@ const userSchema = mongoose.Schema({
     }
 })
 
-console.log('유저스키마' , userSchema)
+console.log('유저스키마' , userSchema.pre)
 // 사용자 정보를 mongoDB에 save하기 전 
 userSchema.pre('save', function( next ){
     var user = this;
